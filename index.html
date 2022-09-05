@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
   <head>
-    <title>Convert Me: A Coding Project by SJ Wonder</title>
+    <title>City Sort: A Coding Project by SJ Wonder</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -23,21 +23,26 @@
     ></script>
     <link href="css/site.css" rel="stylesheet" />
     <link rel="icon" type="img/png" href="img/favicon/favicon-32x32.png" />
-    <!--add ADOBE FONTS LINK HERE-->
-    <link rel="stylesheet" href="https://use.typekit.net/ecv7jcp.css" />
+    <!--add GOOGLE FONTS LINK HERE-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,500&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body class="d-flex flex-column h-100">
     <!--Nav section-->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand logoFont" href="index.html"
+        <a class="navbar-brand logoFont mt-1" href="index.html"
           ><img
             src="img/logoMarkWhite.png"
             class="p-1"
             width="30"
             height="39"
-          />Convert<span class="logoFontBold">Me</span></a
+          />City Sort</a
         >
         <button
           class="navbar-toggler"
@@ -59,7 +64,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="/codeKm.html">The Code KM</a>
+              <a class="nav-link" href="/codePop.html">Population Code</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/codeCel.html">The Code Cel</a>
@@ -91,85 +96,62 @@
     <main class="container-fluid h-100 px-5 pt-5">
       <div class="row pt-5">
         <div class="col-12 col-md-6">
-          <h1 class="logoFont">convert<span class="logoFontBold">me</span></h1>
+          <h1>
+            <span class="logoFont">City Sort: </span> Sort an Array of North
+            Carolina Cities
+          </h1>
           <p class="lead">
-            Input a number to convert it from metric to imperial (USA)
-            measurement.
+            <strong>Instructions:</strong> Given an array of North Carolina
+            cities, write a function that takes this array of objects as a
+            parameter. Sort the cities by population in accending and descending
+            order. Display the newly sorted array in a table below.
           </p>
-
-          <!-- form group kilos -->
-          <div class="form-group">
-            <input
-              type="number"
-              class="form-control"
-              id="InputValue"
-              aria-describedby="kmHelp"
-              placeholder="Enter km value"
-            />
-            <small id="kmHelp" class="form-text text-muted"
-              >Enter a number in kilometers</small
-            >
+          <p>
+            <!-- <strong>Extra Credit:</strong><br />
+            Sort the city data by the city name<br />
+            Sort the city data by median age<br /> -->
+          </p>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="mt-1 text-start">
+                <button
+                  id="btnSubmit"
+                  type="button"
+                  class="btn btn-warning btn-outline-primary"
+                >
+                  Population by Accending Order
+                </button>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="mt-1 text-end">
+                <button
+                  id="btnSubmit2"
+                  type="button"
+                  class="btn btn-warning btn-outline-primary"
+                >
+                  Population by Decending Order
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="mt-1 text-end">
-            <button
-              id="btnSubmit"
-              type="button"
-              class="btn btn-warning btn-outline-primary mb-3"
-            >
-              Convert Kilometers to Miles
-            </button>
+          <div class="mt-2">
+            <table class="table table-striped table-dark table-hover">
+              <thead>
+                <th class="text-center">City</th>
+                <th class="text-center">State</th>
+                <th class="text-center">Population</th>
+                <th class="text-center">Median Age</th>
+                <th class="text-center">Avg Household Size</th>
+              </thead>
+              <tbody id="results">
+                <!--results go here-->
+              </tbody>
+            </table>
           </div>
-          <!-- form group Celsuius -->
-          <div class="form-group">
-            <input
-              type="number"
-              class="form-control"
-              id="InputValue2"
-              aria-describedby="mHelp"
-              placeholder="Enter celsuius value"
-            />
-            <small id="mHelp" class="form-text text-muted"
-              >Enter a number in celsuius</small
-            >
-          </div>
-          <div class="mt-1 text-end">
-            <button
-              id="btnSubmit2"
-              type="button"
-              class="btn btn-warning btn-outline-primary mb-3"
-            >
-              Convert Celsius to Fahrenheit
-            </button>
-          </div>
-          <!-- form group Grams -->
-          <div class="form-group">
-            <input
-              type="number"
-              class="form-control"
-              id="InputValue3"
-              aria-describedby="mHelp"
-              placeholder="Enter gram value"
-            />
-            <small id="mHelp" class="form-text text-muted"
-              >Enter a number in grams</small
-            >
-          </div>
-          <div class="mt-1 text-end">
-            <button
-              id="btnSubmit3"
-              type="button"
-              class="btn btn-warning btn-outline-primary"
-            >
-              Convert Grams to Ounces
-            </button>
-          </div>
-          <h2>Results</h2>
-          <div id="results" class="display-6"></div>
-          <div id="results2" class="display-6"></div>
-          <div id="results3" class="display-6"></div>
         </div>
         <div class="col-12 col-md-6 order-first order-md-2">
-          <img src="/img/convertIMG.png" class="img-fluid" />
+          <img src="/img/citySortImg.jpg" class="img-fluid" />
         </div>
       </div>
     </main>
@@ -234,11 +216,6 @@
       document
         .getElementById("btnSubmit2")
         .addEventListener("click", convertItC);
-    </script>
-    <script>
-      document
-        .getElementById("btnSubmit3")
-        .addEventListener("click", convertItGram);
     </script>
   </body>
 </html>
