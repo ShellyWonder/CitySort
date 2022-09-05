@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <title>Convert Me: A Coding Project by SJ Wonder</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <!--using font awesome-->
+    <script
+      src="https://kit.fontawesome.com/5db21ba9c6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="css/site.css" rel="stylesheet" />
+    <link rel="icon" type="img/png" href="img/favicon/favicon-32x32.png" />
+    <!--add ADOBE FONTS LINK HERE-->
+    <link rel="stylesheet" href="https://use.typekit.net/ecv7jcp.css" />
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <!--Nav section-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand logoFont" href="index.html"
+          ><img
+            src="img/logoMarkWhite.png"
+            class="p-1"
+            width="30"
+            height="39"
+          />Convert<span class="logoFontBold">Me</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/codeKm.html">The Code KM</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/codeCel.html">The Code Cel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/codeGram.html">The Code Gram</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://github.com/ShellyWonder/ConversionChallenge"
+                >Git Repo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://sjwonder-portfolio-2022.netlify.app/#contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--Main section-->
+    <main class="container-fluid h-100 px-5 pt-5">
+      <div class="row pt-5">
+        <div class="col-12 col-md-6">
+          <h1 class="logoFont">convert<span class="logoFontBold">me</span></h1>
+          <p class="lead">
+            Input a number to convert it from metric to imperial (USA)
+            measurement.
+          </p>
+
+          <!-- form group kilos -->
+          <div class="form-group">
+            <input
+              type="number"
+              class="form-control"
+              id="InputValue"
+              aria-describedby="kmHelp"
+              placeholder="Enter km value"
+            />
+            <small id="kmHelp" class="form-text text-muted"
+              >Enter a number in kilometers</small
+            >
+          </div>
+          <div class="mt-1 text-end">
+            <button
+              id="btnSubmit"
+              type="button"
+              class="btn btn-warning btn-outline-primary mb-3"
+            >
+              Convert Kilometers to Miles
+            </button>
+          </div>
+          <!-- form group Celsuius -->
+          <div class="form-group">
+            <input
+              type="number"
+              class="form-control"
+              id="InputValue2"
+              aria-describedby="mHelp"
+              placeholder="Enter celsuius value"
+            />
+            <small id="mHelp" class="form-text text-muted"
+              >Enter a number in celsuius</small
+            >
+          </div>
+          <div class="mt-1 text-end">
+            <button
+              id="btnSubmit2"
+              type="button"
+              class="btn btn-warning btn-outline-primary mb-3"
+            >
+              Convert Celsius to Fahrenheit
+            </button>
+          </div>
+          <!-- form group Grams -->
+          <div class="form-group">
+            <input
+              type="number"
+              class="form-control"
+              id="InputValue3"
+              aria-describedby="mHelp"
+              placeholder="Enter gram value"
+            />
+            <small id="mHelp" class="form-text text-muted"
+              >Enter a number in grams</small
+            >
+          </div>
+          <div class="mt-1 text-end">
+            <button
+              id="btnSubmit3"
+              type="button"
+              class="btn btn-warning btn-outline-primary"
+            >
+              Convert Grams to Ounces
+            </button>
+          </div>
+          <h2>Results</h2>
+          <div id="results" class="display-6"></div>
+          <div id="results2" class="display-6"></div>
+          <div id="results3" class="display-6"></div>
+        </div>
+        <div class="col-12 col-md-6 order-first order-md-2">
+          <img src="/img/convertIMG.png" class="img-fluid" />
+        </div>
+      </div>
+    </main>
+    <!--footer section-->
+    <footer class="footer mt-auto py-3 bg-dark sticky-footer">
+      <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-lg-3 gy-2">
+          <div class="col order-last order-lg-first text-light">
+            <div>
+              <span class="text-muted">&copy;2022</span>&nbsp;SJ Wonder |
+              <a href="mailto:shelly@wonderwebdev.com">
+                shelly@wonderwebdev.com</a
+              >
+            </div>
+          </div>
+          <div
+            class="col d-flex align-items-center justify-content-start justify-content-lg-center"
+          >
+            <img
+              src="/img/White logo - no background.svg"
+              alt="SJ Wonder Logo"
+              height="65"
+            />
+          </div>
+          <!--using font awesome for social media icons-->
+          <div
+            class="col d-flex align-items-center justify-content-start justify-content-lg-end"
+          >
+            <div class="row">
+              <div class="col">
+                <a
+                  href="https://www.linkedin.com/in/shelly-wonder-153990233/"
+                  target="_blank"
+                  ><i class="fab fa-linkedin fa-2x"></i
+                ></a>
+              </div>
+              <div class="col">
+                <a href="https://github.com/ShellyWonder" target="_blank"
+                  ><i class="fab fa-github fa-2x"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--container close tag-->
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/site.js"></script>
+    <script>
+      document
+        .getElementById("btnSubmit")
+        .addEventListener("click", convertItKm);
+    </script>
+    <script>
+      document
+        .getElementById("btnSubmit2")
+        .addEventListener("click", convertItC);
+    </script>
+    <script>
+      document
+        .getElementById("btnSubmit3")
+        .addEventListener("click", convertItGram);
+    </script>
+  </body>
+</html>
