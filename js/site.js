@@ -1,71 +1,159 @@
-//driver function used for display and passing values.
-function convertItKm() {
+let cityData = [{
+        city: "Jacksonville",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 67363,
+        median_age: 24.2,
+        avg_household_size: 2.51
+        
+    },
+    {
+        city: "Cary",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 160514,
+        median_age: 39.9,
+        avg_household_size: 2.61
+    },
+    {
+        city: "Wilmington",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 89270,
+        median_age: 35.5,
+        avg_household_size: 2.24
+    },
+    {
+        city: "Concord",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 60500,
+        median_age: 35.7,
+        avg_household_size: 2.72
+    },
+    {
+        city: "Charlotte",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 827121,
+        median_age: 34.3,
+        avg_household_size: 2.52
+    },
+    {
+        city: "Asheville",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 88507,
+        median_age: 37.9,
+        avg_household_size: 2.18
+    },
+    {
+        city: "Durham",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 257598,
+        median_age: 33.2,
+        avg_household_size: 2.40
+    },
+    {
+        city: "Greenville",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 90588,
+        median_age: 26.2,
+        avg_household_size: 2.40
+    },
+    {
+        city: "Raliegh",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 451949,
+        median_age: 32.8,
+        avg_household_size: 2.42
+    },
+    {
+        city: "High Point",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 109828,
+        median_age: 35.5,
+        avg_household_size: 2.65
+    },
+    {
+        city: "Gastonia",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 74550,
+        median_age: 36.9,
+        avg_household_size: 2.67
+    },
+    {
+        city: "Fayetteville",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 201965,
+        median_age: 30.7,
+        avg_household_size: 2.50
+    },
+    {
+        city: "Winston-Salem",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 241232,
+        median_age: 34.7,
+        avg_household_size: 2.47
+    },
+    {
+        city: "Greensboro",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 285344,
+        median_age: 35.5,
+        avg_household_size: 2.36
+    },
+    {
+        city: "Kernersville",
+        state: "North Carolina",
+        state_code: "NC",
+        population: 24414,
+        median_age: 42,
+        avg_household_size: 2.31
 
-    //get the user-entered value
-  let kmValue = parseFloat(document.getElementById("InputValue").value);
-    //Validation:
-    if (isNaN(kmValue) ) {
-    alert("Please enter a number");
-    
-  } else {
-    //call function coverting km value to miles
-    let milesValue = convertToKm(kmValue);
-    
-    //displays results fixed to 2 dec places
-    document.getElementById("results").innerHTML = `${kmValue} km = ${milesValue.toFixed(2)} miles`;
-  }
-  
-  //performs equation Km * 0.6214 = miles 
-function convertToKm(KmValue) {
-  let milesValue = 0;
-  milesValue = kmValue * 0.6214;
-   return milesValue;
-
-  }
-}
-function convertItC() {
-  
-  let celValue = parseFloat(document.getElementById("InputValue2").value);
-  if (isNaN(celValue) ) {
-    alert("Please enter a number");
-    
-  } else {
-    //call function converting C value to farenheit
-    let farValue = convertToC(celValue);
-    
-    //display results fixed to 2 dec places
-    document.getElementById("results2").innerHTML = `${celValue} degrees Celsius = ${farValue.toFixed(2)} degrees Fahenheit.`;
-  }
-
-  //performs equation (Cel * 1.8) + 32 = Farenheit 
-  function convertToC(celValue) {
-  let farValue = 0;
-  farValue = (celValue * 1.8) + 32;
-   return farValue;
-  }
-}
- 
-function convertItGram() {
-  let gramValue = parseFloat(document.getElementById("InputValue3").value);
-   if (isNaN(gramValue) ) {
-           alert("Please enter a number");
-     
-       } else {
-             //call function converting the gram value to ounces
-             let ounceValue = convertToGram(gramValue);
-       
-//        displays results fixed to 2 dec places
-       document.getElementById("results3").innerHTML = `${gramValue} grams = ${ounceValue.toFixed(2)} ounces.`;
-       
-      }
-//       //performs equation ounce = gramValue / 28.35; 
-     function convertToGram(gramValue) {
-       let ounceValue = 0;
-       ounceValue = gramValue / 28.35;
-        return ounceValue;
-     
-       }
     }
+];
+
+//driver function used for display and passing values.
+function citySort() {
+
+    
+    sortByPopulation(cityData, "desc");
+    
+    //extra credit functions
+    //sortyByName(cityData);
+    //sortByAge(cityData, "asc");
+    
+    //display
+    tbody = document.getElementById("results");
+    let trow = "";
+    //display the data 
+    cityData.forEach(item => {
+        trow += `<tr><td>${item.city}</td><td>${item.state_code}</td><td>${item.population.toLocaleString("en-US")}</td><td>${item.median_age}</td><td>${item.avg_household_size}</td></tr>`;
+    });
+    tbody.innerHTML = "";
+    tbody.innerHTML = trow;
+}
+
+//takes an array of objects and sorts by population. 
+function sortByPopulation(cityData, sortDir) {
+    
+}
+
+//takes an array of objects and sorts by median age. 
+function sortByAge(cityData, sortDir){
   
+}
 
-
+//takes an array of objects and sorts by city name. 
+function sortyByName(cityData) {
+    
+}
