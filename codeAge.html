@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-  <title>Convert Me: A Coding Project by SJ Wonder</title>
+  <title>City Sort: A Coding Project by SJ Wonder</title>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -15,8 +15,10 @@
   <link href="css/site.css" rel="stylesheet" />
   <link rel="icon" type="img/png" href="img/favicon/favicon-32x32.png" />
   <link href="/css/prism.css" rel="stylesheet" />
-  <!--add ADOBE FONTS LINK HERE-->
-  <link rel="stylesheet" href="https://use.typekit.net/ecv7jcp.css">
+  <!--add GOOGLE FONTS LINK HERE-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,500&display=swap" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -41,10 +43,10 @@
               <a class="nav-link" href="/codeKm.html">The Code KM</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/codeCel.html">The Code Cel</a>
+              <a class="nav-link" href="/codeCel.html">The Code Cel</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/codeGram.html">The Code Gram</a>
+              <a class="nav-link active" aria-current="page" href="/codeGram.html">The Code Gram</a>
             </li>
           <li class="nav-item">
             <!--CHANGE THIS LINK-->
@@ -60,37 +62,34 @@
   <!--Main section-->
   <main class="flex-shrink-0">
     <div class="container py-5 px-5 mt-5">
-      <h2 class="border-1 border-bottom border-dark">The Code - Celsius to Fahrenheit Conversion</h2>
+      <h2 class="border-1 border-bottom border-dark">The Code - Gram to Ounce Conversion</h2>
       <div class="row row-cols-1 row-cols-lg-2">
         <!--CODE EMBED-->
         <div class="col-lg-8">
           <pre class="line-numbers">
             <code class="language-javascript">
-///INITIATION:
-              
-//driver function used for display and passing values.
-function convertItC() {
-  
-  let celValue = parseFloat(document.getElementById("InputValue2").value);
-  if (isNaN(celValue) ) {
-    alert("Please enter a number");
-    
-  } else {
-    //call function converting C value to farenheit
-    let farValue = convertToC(celValue);
-    
-    //display results fixed to 2 dec places
-    document.getElementById("results2").innerHTML =
-     `${celValue} degrees Celsius = ${farValue.toFixed(2)} degrees Fahenheit.`;
-  }
-
-  //performs equation (Cel * 1.8) + 32 = Farenheit 
-  function convertToC(celValue) {
-  let farValue = 0;
-  farValue = (celValue * 1.8) + 32;
-   return farValue;
-  }
-}
+function convertItGram() {
+  let gramValue = parseFloat(document.getElementById("InputValue3").value);
+   if (isNaN(gramValue) ) {
+           alert("Please enter a number");
+     
+       } else {
+             //call function converting the gram value to ounces
+             let ounceValue = convertToGram(gramValue);
+       
+//        displays results fixed to 2 dec places
+       document.getElementById("results3").innerHTML =
+        `${gramValue} grams = ${ounceValue.toFixed(2)} ounces.`;
+       
+      }
+//       //performs equation ounce = gramValue / 28.35; 
+     function convertToGram(gramValue) {
+       let ounceValue = 0;
+       ounceValue = gramValue / 28.35;
+        return ounceValue;
+     
+       }
+    }
             </code>
           </pre>
         </div>
@@ -100,7 +99,7 @@ function convertItC() {
           <!--CHANGE THIS LINK-->
           <h5 class="logoFont">Convert<span class="logoFontBold">Me</span></h5>
           <p>
-            <span class="logoFont">Convert</span><span class="logoFontBold">Me</span> is a simple program converting the input integer from Celsius to Farenheit and displaying the result to the page.  
+            <span class="logoFont">Convert</span><span class="logoFontBold">Me</span> is a simple program converting the input integer from grams to ounces and displaying the result to the page.  
           </p>
           <h4>Brief code overview:</h4>
           <ul>
@@ -109,7 +108,7 @@ function convertItC() {
                 <li>event listener (located in the bottom &lt;script&gt; tag) is triggered by a "click" on the "submit"
                   button.
                 </li><br>
-                <li>Input from the user field ("CelValue") is passed into the "convertItC"
+                <li>Input from the user field ("gramValue") is passed into the "convertItGram"
                   function.</li><br>
               </ul>
 
@@ -124,13 +123,15 @@ function convertItC() {
               </ul>
             </li>
             <li>Logic:
-              <p>Within the "convertItC" function, the "convertToC" function is called:
+              <p>Within the "convertItGram" function, the "convertToGram" function is called:
               <ul>
-               <li>the parameter "celValue" is passed </li><br>
+               <li>the parameter "gramValue" is passed </li><br>
                 <li>the conversion equation is executed</li><br>
 
               </ul>
+
             </li>
+
           </ul>
 
           </li>
@@ -138,7 +139,7 @@ function convertItC() {
             <li>Display:
               <ul>
                 
-                <li>Finally, results are published to the HTML via the "results2" class.</li><br>
+                <li>Finally, results are published to the HTML via the "results3" class.</li><br>
               </ul>
           </ul>
           </li>
