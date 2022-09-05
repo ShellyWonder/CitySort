@@ -8,20 +8,14 @@
 
 /*change logoFont with each project*/
 .logoFont {
-font-family: collector-comic, sans-serif;
-
-  font-weight: 400;
-
-  font-style: normal;
+font-family: 'Source Code Pro', monospace;
 }
 
-.logoFontBold {
-  font-family: collector-comic, sans-serif;
-
-  font-weight: 700;
-
-  font-style: normal;
+.examples td {
+  font-size: 1.5rem;
 }
+
+
 
 main > .container {
   padding: 60px 15px 0;
@@ -42,8 +36,6 @@ h6 {
 .bg-dark {
   background-color: var(--sjw-background-color) !important;
 }
-
-
 
 /*--button styles override Bootstrap styles--*/
 .btn.outline-primary {
@@ -72,13 +64,6 @@ h6 {
   border-color: var(--sjw-secondary-color);
 }
 
-.odd {
-  font-weight: 400;
-}
-
-.even {
-  font-weight: bold;
-}
 
 /*footer styles*/
 .sticky-footer {
