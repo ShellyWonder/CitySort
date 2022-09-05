@@ -1,3 +1,3 @@
-Convert Me -
-A simple program converting a metric input integer to its imperial(USA)equivalent. 
-![convertIMG](https://user-images.githubusercontent.com/91100506/188480550-986dd3e7-d498-476d-8372-e922ece4f3fc.png)
+City Sort -
+A simple program that uses JS sort methods to compare and order North Carolina demographic information (packaged as objects). 
+![citySortImg](https://user-images.githubusercontent.com/91100506/188512680-e6f0cbf9-8479-43e3-a085-edf1644b68e8.jpg)
