@@ -129,7 +129,7 @@ function citySort() {
   sortByPopulationDSC(cityData, "desc");
   sortByPopulationASC(cityData, "asc");
     
-    //extra credit functions
+   
     sortyByName(cityData, "asc");
     sortByAge(cityData, "asc");
     
