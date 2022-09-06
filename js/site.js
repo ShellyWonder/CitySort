@@ -130,8 +130,8 @@ function citySort() {
   sortByPopulationASC(cityData, "asc");
     
     //extra credit functions
-    //sortyByName(cityData);
-    //sortByAge(cityData, "asc");
+    sortyByName(cityData, "asc");
+    sortByAge(cityData, "asc");
     
     //display
     tbody = document.getElementById("results");
@@ -163,10 +163,28 @@ function sortByPopulation(cityData, sortDir) {
 
 //Sorts array by median age. 
 function sortByAge(cityData, sortDir){
-  
+    cityData.sort((a, b) => {
+      if (sortDir == "asc") {
+          return (a.median_age - b.median_age);
+      } else {
+        return (b.median_age - a.median_age);
+      }
+  })
 }
-
-//Sorts array by city name. 
+//Sort strings
+//Sorts array by city name in asc order. 
 function sortyByName(cityData) {
-    
+    cityData.sort((a, b) => {
+      //case sensitive
+        let ca = a.city.toLowerCase();
+        let cb = b.city.toLowerCase();
+        //compare returns =0, -1 || +1
+        let compare = 0;
+        if (ca > cb){
+            compare = 1;
+        } else if (ca < cb){
+            compare = -1;
+        }
+        return compare;
+    });
 }
