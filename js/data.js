@@ -65,7 +65,7 @@ export const cityData = [
     avg_household_size: 2.40
 },
 {
-    city: "Raliegh",
+    city: "Raleigh",
     state: "North Carolina",
     state_code: "NC",
     population: 451949,
