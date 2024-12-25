@@ -1,14 +1,42 @@
 import { cityData } from "./data.js";
 
-//driver function used for display and passing values.
+document.addEventListener('DOMContentLoaded', () => {
+    // Initial display
+    displayCitiesAlphabetically();
+
+    document.getElementById("btnSubmit").addEventListener("click", window.sortByPopulationASC);
+    document.getElementById("btnSubmit2").addEventListener("click", window.sortByPopulationDSC);
+    updateCopyrightYear();
+});
+
+// Get table body
+let tbody = document.getElementById("results");
+
+function displayTableData(cityData) {
+    let trow = "";
+    // Create table rows
+    cityData.forEach(item => {
+        trow += `<tr>
+            <td class="text-center">${item.city}</td>
+            <td class="text-center">${item.state_code}</td>
+            <td class="text-center">${item.population.toLocaleString("en-US")}</td>
+            <td class="text-center">${item.median_age}</td>
+            <td class="text-center">${item.avg_household_size}</td>
+        </tr>`;
+    });
+    tbody.innerHTML = trow;
+}
+function displayCitiesAlphabetically() {
+    // Sort cities alphabetically
+    sortByName(cityData, "asc");        
+    displayTableData(cityData);
+}
+
+
 function citySort() {
 
-    
-  sortByPopulationDSC(cityData, "desc");
-  sortByPopulationASC(cityData, "asc");
-    
-   
-    sortyByName(cityData, "asc");
+  
+    sortByName(cityData, "asc");
     sortByAge(cityData, "asc");
     
     //display
@@ -22,7 +50,6 @@ function citySort() {
     tbody.innerHTML = trow;
 }
 
-//takes an array of objects and sorts by population. 
 function sortByPopulation(cityData, sortDir) {
   //numeric sort--anonymous function to compare  two objects//then reverse & compare again 
   //positive number, negative number or zero; zero = no action needed
@@ -36,8 +63,16 @@ function sortByPopulation(cityData, sortDir) {
     }
   });
 }
+// Export the functions so they're available globally
+window.sortByPopulationASC = function() {
+    sortByPopulation(cityData, "asc");
+    displayTableData(cityData);
+}
 
-
+window.sortByPopulationDSC = function() {
+    sortByPopulation(cityData, "desc");
+    displayTableData(cityData);
+}
 
 //Sorts array by median age. 
 function sortByAge(cityData, sortDir){
@@ -51,7 +86,7 @@ function sortByAge(cityData, sortDir){
 }
 //Sort strings
 //Sorts array by city name in asc order. 
-function sortyByName(cityData) {
+function sortByName(cityData, sortDir) {
     cityData.sort((a, b) => {
       //case sensitive
         let ca = a.city.toLowerCase();
@@ -66,3 +101,7 @@ function sortyByName(cityData) {
         return compare;
     });
 }
+function updateCopyrightYear() {
+    const currentYear = new Date().getFullYear();
+    document.getElementById("copyrightYear").textContent = currentYear;
+  }
