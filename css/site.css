@@ -6,7 +6,7 @@
   --sjw-background-color: #01092b;
 }
 
-/*change logoFont with each project*/
+
 .logoFont {
 font-family: 'Source Code Pro', monospace;
 }
@@ -15,11 +15,14 @@ font-family: 'Source Code Pro', monospace;
   font-size: 1.5rem;
 }
 
+main {
+  padding-bottom: 100px; /* Adjust value based on footer height */
+}
 
 
 main > .container {
   padding: 60px 15px 0;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
   min-height: 90vh;
 }
 
@@ -64,19 +67,17 @@ h6 {
   border-color: var(--sjw-secondary-color);
 }
 
-
-/*footer styles*/
-.sticky-footer {
-  position: sticky;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+.table {
+  margin-bottom: 7rem; /* Adds space between table and footer */
 }
-
 .footer {
   background-color: var(--sjw-dark-color);
   padding-right: 1rem;
   color: var(--sjw-light-color);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 footer .social > a {
