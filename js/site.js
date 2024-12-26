@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
  //dropdown sort options
+ document.getElementById("btnNameAsc").addEventListener("click", displayCitiesAlphabetically);
     document.getElementById("btnPopAsc").addEventListener("click", window.sortByPopulationASC);
     document.getElementById("btnPopDesc").addEventListener("click", window.sortByPopulationDSC);
 
