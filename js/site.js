@@ -4,9 +4,33 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial display
     displayCitiesAlphabetically();
 
-    document.getElementById("btnSubmit").addEventListener("click", window.sortByPopulationASC);
-    document.getElementById("btnSubmit2").addEventListener("click", window.sortByPopulationDSC);
-    updateCopyrightYear();
+    document.getElementById("btnNameReversed").addEventListener("click", () => {
+      cityData.reverse(); // Simply reverse the current alphabetical order
+      displayTableData(cityData);
+  });
+
+ //dropdown sort options
+    document.getElementById("btnPopAsc").addEventListener("click", window.sortByPopulationASC);
+    document.getElementById("btnPopDesc").addEventListener("click", window.sortByPopulationDSC);
+
+    document.getElementById("btnAgeAsc").addEventListener("click", () => {
+        sortByAge(cityData, "asc");
+        displayTableData(cityData);
+    });
+    document.getElementById("btnAgeDesc").addEventListener("click", () => {
+        sortByAge(cityData, "desc");
+        displayTableData(cityData);
+    });
+    document.getElementById("btnHouseholdAsc").addEventListener("click", () => {
+      cityData.sort((a, b) => a.avg_household_size - b.avg_household_size);
+      displayTableData(cityData);
+  });
+  document.getElementById("btnHouseholdDesc").addEventListener("click", () => {
+      cityData.sort((a, b) => b.avg_household_size - a.avg_household_size);
+      displayTableData(cityData);
+  });
+  
+  updateCopyrightYear();
 });
 
 // Get table body
@@ -30,24 +54,6 @@ function displayCitiesAlphabetically() {
     // Sort cities alphabetically
     sortByName(cityData, "asc");        
     displayTableData(cityData);
-}
-
-
-function citySort() {
-
-  
-    sortByName(cityData, "asc");
-    sortByAge(cityData, "asc");
-    
-    //display
-    tbody = document.getElementById("results");
-    let trow = "";
-    //display the data 
-    cityData.forEach(item => {
-        trow += `<tr><td class="text-center">${item.city}</td><td td class="text-center">${item.state_code}</td><td td class="text-center">${item.population.toLocaleString("en-US")}</td><td td class="text-center">${item.median_age}</td><td td class="text-center">${item.avg_household_size}</td></tr>`;
-    });
-    tbody.innerHTML = "";
-    tbody.innerHTML = trow;
 }
 
 function sortByPopulation(cityData, sortDir) {
