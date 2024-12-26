@@ -7,17 +7,17 @@ A JavaScript application that analyzes and sorts North Carolina city demographic
 This project is a coding challenge. Given a hard-coded array of North Carolina cities, write a function that takes this array of objects as a parameter. Sort the cities by population in ascending and descending order. Display the newly sorted array in a table below.
 
 ## Extra Credit
-- Sort by the remaining properties in the object.
+Sort by the remaining properties in the object.
 
 ## Description
-CitySort demonstrates the power of JavaScript array sorting by organizing North Carolina city data objects based on various demographic attributes.
+City Sort demonstrates the power of JavaScript array sorting by organizing North Carolina city data objects based on various demographic attributes.
 
 ## Features
 - A dropdown menu allows the user to select which attribute to sort by:
-     *City name alphabetically
-     *Population
-     *Median Age
-     *Average Household Size
+1. City name alphabetically
+2. Population
+3. Median Age
+4. Average Household Size
 - In accending and descending order
 
 ## Separation of Concerns:
@@ -60,6 +60,7 @@ CitySort demonstrates the power of JavaScript array sorting by organizing North 
 - JavaScript
 - HTML
 - CSS
+- Bootstrap
 
 ## Getting Started
 1. Clone the repository
@@ -73,7 +74,7 @@ The application automatically sorts and displays North Carolina city demographic
 Add US Census API to provide more accurate data
 
 ## Status
-Project is: _complete_
+Project is:
 Portfolio Ready
 
 
