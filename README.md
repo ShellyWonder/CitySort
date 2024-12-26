@@ -13,12 +13,12 @@ Sort by the remaining properties in the object.
 City Sort demonstrates the power of JavaScript array sorting by organizing North Carolina city data objects based on various demographic attributes.
 
 ## Features
-- A dropdown menu allows the user to select which attribute to sort by:
+A dropdown menu allows the user to select which attribute to sort by:
 1. City name alphabetically
 2. Population
 3. Median Age
 4. Average Household Size
-- In accending and descending order
+In accending and descending order
 
 ## Separation of Concerns:
 - HTML structure is separate from JavaScript logic
