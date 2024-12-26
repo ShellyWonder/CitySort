@@ -36,41 +36,17 @@ h6 {
     color: var(--sjw-table-color);
     
   }
+  .dropdown-divider {
+    background-color: var(--sjw-table-color);
+  }
 /*Navbar styles*/
 .bg-dark {
   background-color: var(--sjw-background-color) !important;
 }
 
-/*--button styles override Bootstrap styles--*/
-.btn.outline-primary {
-  color: var(--sjw-secondary-color);
-  border-color: var(--sjw-secondary-color) !important;
-}
-
-.btn-outline-primary:hover,
-.btn-outline-primary:active,
-.btn-outline-primary:focus {
-  border-color: var(--sjw-primary-color);
-  background-color: var(--sjw-secondary-color);
-}
-
-.btn-primary {
-  color: white !important;
-  background-color: var(--sjw-secondary-color) !important;
-  border-color: var(--sjw-secondary-color);
-}
-
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:visited,
-.btn-primary:focus {
-  filter: brightness(1.1) !important;
-  border-color: var(--sjw-secondary-color);
-}
-
 .table {
   margin-bottom: 7rem; /* Adds space between table and footer */
-  box-shadow: 1rem 0 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.15);
   border: 1px solid var(--sjw-table-color);
 }
 
