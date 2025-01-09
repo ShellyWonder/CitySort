@@ -63,7 +63,7 @@ In accending and descending order
 - Bootstrap
 
 ## Getting Started
-1. Clone the repository
+1. Clone the repository(https://github.com/ShellyWonder/CitySort.git)
 2. Open the project in your preferred code editor
 3. Run the application in a web browser
 
